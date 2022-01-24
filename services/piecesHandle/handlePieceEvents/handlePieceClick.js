@@ -8,7 +8,7 @@ export default {
         if ( checkMate.gameOver ) {
             return
         }
-
+        alert("Placing piece")
         const { pieceSelectedPosition } = this
         
         if ( piecesDetermine.hasPiecePotential( pieceSelectedPosition, pieceBoxPosition ) ) {

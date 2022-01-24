@@ -29,7 +29,7 @@ export const piecesDetermine = {
     ///////////////////////////////
 
     generateDeterminations( pieceBoxPositionsObject = null ) {
-        this.resetDeterminations()
+        this.resetDeterminations()//Set determinations object to {}
         
         for ( const { 
             pieceSingleType,
@@ -69,6 +69,8 @@ export const piecesDetermine = {
                 isWhitePiece,
                 pieceSingleType
             })
+            //alert("length" + currentPieceboxPositions[currentPieceboxPositions.length-1].pieceType)
+            // console.log(currentPieceboxPositions)
         }
         
         return currentPieceboxPositions

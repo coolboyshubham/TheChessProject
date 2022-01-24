@@ -9,7 +9,8 @@ export default {
         if ( pieceElement ) {
             pieceElement.remove()
         }
-
+        alert(pieceBoxElement.innerHTML)
+        alert(pieceElement)
         const pieceBoxElementSelected = $( `#${ this.pieceSelectedPosition }` )
         const pieceElementSelected = $$$( pieceBoxElementSelected, chessConfig.chessPieceSelector )
         pieceBoxElement.append( pieceElementSelected )

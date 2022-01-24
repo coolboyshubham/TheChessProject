@@ -14,6 +14,7 @@ export default {
             //If another piece is is already selected
             const hasPiecePotential = piecesDetermine.hasPiecePotential( this.pieceSelectedPosition, pieceBoxPosition )
             if ( hasPiecePotential ) {
+               // alert(pieceBoxElement.innerHTML)
                 this.setPointer( pieceBoxElement )
             }
             return

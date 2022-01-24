@@ -11,7 +11,7 @@ export const piecesRender = {
 
     renderPieces() {
         const gameSetup = chessConfig.useInitialGame ? initialGame : potentialGame//Get the initial pieces placement from the arrays
-        
+        //alert("Render Pieces called")
         this.placePieceBoxNumbers()//Place piece box numbers in every piecebox div
 
         //this.placeWhiteDownOrUp()
@@ -21,10 +21,12 @@ export const piecesRender = {
     },
     placePieceBoxNumbers() {
         $$( chessConfig.chessPieceBoxSelector ).map( pieceBoxElement => {
+          
             const spanElement = document.createElement( 'span' )
             spanElement.classList.add( 'piece-box-text' )
             spanElement.innerHTML = pieceBoxElement.getAttribute( 'id' )
             //Place the id of the position in every box
+//            alert(pieceBoxElement.innerHTML)
             pieceBoxElement.append( spanElement )
         })
     },
@@ -59,7 +61,7 @@ export const piecesRender = {
             //alert(pieceBoxPosition)
             const pieceElement = $$$( pieceBoxElement, chessConfig.chessPieceSelector )
             const pieceType = pieceElement?.getAttribute( 'piece-type' ) ?? null
-            //Gewt piece type if it is there. Get null otherwise
+            //Get piece type if it is there. Get null otherwise
 
             const handleParams = {
                 pieceBoxElement,
@@ -71,6 +73,7 @@ export const piecesRender = {
             this.piecesEventListeners[ pieceBoxPosition ] = {
                 'mouseenter': _ => {
                    // alert("Mouse Enter")
+                   //alert(piecesHandle)
                     piecesHandle.handlePieceMouseenter( handleParams )
                     //Mouse enter. Highlight the position in yellow is done by css
                 },
